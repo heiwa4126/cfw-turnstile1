@@ -2,9 +2,9 @@
 
 Cloudflare Turnstile の練習。
 
-開発時(dev)はサイトキーは 
+開発時(dev)はサイトキーは
 1x00000000000000000000AA
-に固定。シークレットキーは 環境変数TURNSTILE_SECRET_KEYを使う。
+に固定。シークレットキーは環境変数 TURNSTILE_SECRET_KEY を使う。
 
 参照: <https://developers.cloudflare.com/turnstile/troubleshooting/testing/#testing-scenarios>
 

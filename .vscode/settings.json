@@ -1,6 +1,6 @@
 {
 	"files.associations": {
-		"wrangler.json": "jsonc",
+		"wrangler.json": "jsonc"
 	},
-	"cSpell.words": ["remoteip", "sitekey"],
+	"cSpell.words": ["remoteip", "sitekey"]
 }

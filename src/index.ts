@@ -50,11 +50,6 @@ async function validateTurnstile(
 	}
 }
 
-
-
-
-
-
 export default {
 	async fetch(request, env: AppEnv, _ctx): Promise<Response> {
 		const url = new URL(request.url);
