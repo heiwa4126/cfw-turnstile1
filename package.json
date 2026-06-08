@@ -3,9 +3,10 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"inject:sitekey:dev": "node scripts/inject-sitekey.mjs --env-file .env",
-		"inject:sitekey:prod": "node scripts/inject-sitekey.mjs --env-file .env.production",
-		"deploy": "node scripts/deploy-with-sitekey.mjs",
+		"pre-deploy": "node --env-file .env.production scripts/inject-sitekey.mjs",
+		"deploy-main": "wrangler deploy --env-file .env.production",
+		"post-deploy": "node --env-file .env.production scripts/inject-sitekey.mjs -r",
+		"deploy": "run-s pre-deploy deploy-main post-deploy",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
 		"test": "vitest",
@@ -17,6 +18,7 @@
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.16.13",
 		"@types/node": "^25.9.2",
+		"npm-run-all2": "^9.0.1",
 		"typescript": "^6.0.3",
 		"vitest": "~4.1.8",
 		"wrangler": "^4.98.0"

@@ -38,7 +38,6 @@ const options = {
 };
 
 const { file: htmlFile, backup: backupFile, restore: restoreMode } = parseArgs({ options }).values;
-
 //console.log({ restoreMode, htmlFile, backupFile });
 
 if (restoreMode) {
