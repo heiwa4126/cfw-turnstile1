@@ -35,6 +35,8 @@ function parseEnvFile(filePath) {
 
 const envFile = resolve(getArg("--env-file", ".env"));
 const htmlFile = resolve(getArg("--file", "public/index.html"));
+
+
 const envKey = getArg("--env-key", "TURNSTILE_SITE_KEY");
 const target = getArg("--target", 'data-sitekey="1x00000000000000000000AA"');
 
