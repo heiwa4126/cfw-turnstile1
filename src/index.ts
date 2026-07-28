@@ -33,5 +33,5 @@ export default {
 		}
 
 		return textPlainResponse("Not Found", 404);
-	},
+	}
 } satisfies ExportedHandler<AppEnv>;

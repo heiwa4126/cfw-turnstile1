@@ -13,19 +13,19 @@ export type AppEnv = Env & {
 async function validateTurnstile(
 	secret: string,
 	token: string,
-	remoteip?: string,
+	remoteip?: string
 ): Promise<TurnstileVerifyResult> {
 	try {
 		const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
 				secret,
 				response: token,
-				remoteip,
-			}),
+				remoteip
+			})
 		});
 
 		const result = (await response.json()) as TurnstileVerifyResult;
@@ -39,7 +39,7 @@ async function validateTurnstile(
 export async function buildTurnstileErrorResponse(
 	request: Request,
 	env: AppEnv,
-	formData: FormData,
+	formData: FormData
 ): Promise<Response | undefined> {
 	const token = formData.get("cf-turnstile-response");
 	if (typeof token !== "string" || token.length === 0) {
@@ -69,7 +69,7 @@ export function textPlainResponse(value: string | number, status = 200): Respons
 		status,
 		headers: {
 			"content-type": "text/plain; charset=utf-8",
-			"content-length": contentLength,
-		},
+			"content-length": contentLength
+		}
 	});
 }

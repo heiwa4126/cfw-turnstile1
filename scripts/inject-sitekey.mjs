@@ -23,18 +23,18 @@ const options = {
 	file: {
 		type: "string",
 		short: "f",
-		default: "public/index.html",
+		default: "public/index.html"
 	},
 	backup: {
 		type: "string",
 		short: "b",
-		default: "tmp/index.html.bak",
+		default: "tmp/index.html.bak"
 	},
 	restore: {
 		type: "boolean",
 		short: "r",
-		default: false,
-	},
+		default: false
+	}
 };
 
 const { file: htmlFile, backup: backupFile, restore: restoreMode } = parseArgs({ options }).values;
