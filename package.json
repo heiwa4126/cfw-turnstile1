@@ -8,19 +8,21 @@
 		"post-deploy": "node --env-file .env.production scripts/inject-sitekey.mjs -r",
 		"deploy": "run-s pre-deploy deploy-main post-deploy",
 		"dev": "wrangler dev",
+		"login": "wrangler login",
+		"login-no-browser": "wrangler login --browser false",
 		"start": "wrangler dev",
-		"test": "vitest",
+		"test": "vitest run",
 		"cf-typegen": "wrangler types",
 		"format": "oxfmt",
 		"lint": "oxlint",
 		"check": "oxfmt && oxlint --fix"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.16.13",
-		"@types/node": "^25.9.2",
-		"npm-run-all2": "^9.0.1",
-		"typescript": "^6.0.3",
-		"vitest": "~4.1.8",
-		"wrangler": "^4.98.0"
+		"@cloudflare/vitest-pool-workers": "^0.18.7",
+		"@types/node": "^26.1.1",
+		"npm-run-all2": "^9.0.2",
+		"typescript": "^7.0.2",
+		"vitest": "~4.1.10",
+		"wrangler": "^4.113.0"
 	}
 }

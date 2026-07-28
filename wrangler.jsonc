@@ -17,7 +17,7 @@
 		"directory": "./public",
 	},
 	"secrets": {
-		"required": ["TURNSTILE_SITE_KEY", "TURNSTILE_SECRET_KEY"],
+		"required": ["TURNSTILE_SITE_KEY", "TURNSTILE_SECRET"],
 	},
 	/**
 	 * Smart Placement

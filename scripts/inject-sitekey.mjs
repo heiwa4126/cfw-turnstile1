@@ -14,9 +14,9 @@ function replaceSiteKey(srcfile, dstfile, siteKey) {
 	writeFileSync(dstfile, output, "utf8");
 }
 
-const secretKey = process.env.TURNSTILE_SECRET_KEY;
-if (!secretKey) {
-	throw new Error("TURNSTILE_SECRET_KEY is not set");
+const siteKey = process.env.TURNSTILE_SITE_KEY;
+if (!siteKey) {
+	throw new Error("TURNSTILE_SITE_KEY is not set");
 }
 
 const options = {
@@ -49,5 +49,5 @@ if (restoreMode) {
 	copyFileSync(htmlFile, backupFile);
 
 	// 書き換え
-	replaceSiteKey(backupFile, htmlFile, secretKey);
+	replaceSiteKey(backupFile, htmlFile, siteKey);
 }

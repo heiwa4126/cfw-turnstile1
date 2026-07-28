@@ -7,7 +7,7 @@ type TurnstileVerifyResult = {
 };
 
 export type AppEnv = Env & {
-	TURNSTILE_SECRET_KEY?: string;
+	TURNSTILE_SECRET?: string;
 };
 
 async function validateTurnstile(
@@ -46,7 +46,7 @@ export async function buildTurnstileErrorResponse(
 		return textPlainResponse("Turnstile token is missing.", 400);
 	}
 
-	const secret = env.TURNSTILE_SECRET_KEY ?? ALWAYS_FAIL_SECRET_KEY;
+	const secret = env.TURNSTILE_SECRET ?? ALWAYS_FAIL_SECRET_KEY;
 
 	const remoteip =
 		request.headers.get("CF-Connecting-IP") ?? request.headers.get("X-Forwarded-For") ?? undefined;

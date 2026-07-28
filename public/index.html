@@ -7,10 +7,11 @@
 		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 	</head>
 	<body>
-		<h1 id="heading">Cloudflare Turnstile Example</h1>
+		<h1>Cloudflare Turnstile Example</h1>
 		<form action="/submit" method="POST">
-			<div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
 			<input type="text" name="name" placeholder="Enter your name" required />
+			<!-- Turnstile widget with basic configuration -->
+			<div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
 			<button type="submit">Submit</button>
 		</form>
 	</body>
