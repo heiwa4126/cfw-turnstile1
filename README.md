@@ -30,13 +30,17 @@ CLOUDFLARE_API_TOKEN は `wrangler login` が難しい環境で、
 
 ```sh
 pnpm i
+pnpm run cf-typegen
+
+# ローカルでテスト
 pnpm run dev
-```
 
-ローカルでテスト
+# ログイン
+pnpm run login
+## または
+pnpm run login-no-browser
 
-```sh
+# デプロイ
 pnpm run deploy
+## Cloudflare でテスト
 ```
-
-Cloudflare でテスト

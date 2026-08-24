@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"pre-deploy": "node --env-file .env.production scripts/inject-sitekey.mjs",
-		"deploy-main": "wrangler deploy --env-file .env.production",
+		"deploy-main": "wrangler deploy --minify --env-file .env.production",
 		"post-deploy": "node --env-file .env.production scripts/inject-sitekey.mjs -r",
 		"deploy": "run-s pre-deploy deploy-main post-deploy",
 		"dev": "wrangler dev",
@@ -18,11 +18,11 @@
 		"check": "oxfmt && oxlint --fix"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.18.8",
-		"@types/node": "^26.1.1",
-		"npm-run-all2": "^9.0.2",
+		"@cloudflare/vitest-pool-workers": "^0.20.1",
+		"@types/node": "^26.1.2",
+		"npm-run-all2": "^9.0.3",
 		"typescript": "^7.0.2",
 		"vitest": "~4.1.10",
-		"wrangler": "^4.114.0"
+		"wrangler": "^4.118.0"
 	}
 }
