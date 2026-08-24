@@ -18,11 +18,11 @@
 		"check": "oxfmt && oxlint --fix"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.20.1",
-		"@types/node": "^26.1.2",
+		"@cloudflare/vitest-pool-workers": "^0.20.3",
+		"@types/node": "^26.2.0",
 		"npm-run-all2": "^9.0.3",
 		"typescript": "^7.0.2",
-		"vitest": "~4.1.10",
-		"wrangler": "^4.118.0"
+		"vitest": "~4.1.11",
+		"wrangler": "^4.125.0"
 	}
 }
